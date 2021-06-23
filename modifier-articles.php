@@ -1,9 +1,9 @@
-<h1>AJOUT PRODUIT</h1>
+<h1>MODIFICATION D' ARTICLES</h1>
 
 <?php
 if (!isset($_SESSION["is_admin"])) {
     header('Refresh:3; url=./index.php?page=blog');
-    echo "<h3>Vous n'avez pas accès à cette page car vous nêtes pas administrateur.<br>Redirection vers la page de blog...";
+    echo "<h3>Vous n'avez pas accès à cette page car vous nêtes pas administrateur.<br>Redirection vers la page de Blog...";
 }
 ?>
 

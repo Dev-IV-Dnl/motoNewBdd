@@ -1,4 +1,4 @@
-<h1>AJOUT ARTICLE</h1>
+<h1>AJOUT GOODIES</h1>
 
 <?php
 if (!isset($_SESSION["is_admin"])) {
