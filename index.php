@@ -62,7 +62,7 @@ session_start();
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administration</a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="./index.php?page=ajout-article">Ajout d'articles</a>
-                <a class="dropdown-item" href="./index.php?page=ajout-produit">Ajout de Goodies</a>
+                <a class="dropdown-item" href="./index.php?page=ajout-goodies">Ajout de Goodies</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Modifier les articles</a>
                 <a class="dropdown-item" href="#">Modifier les goodies</a>

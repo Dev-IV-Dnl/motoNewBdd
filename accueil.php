@@ -6,19 +6,21 @@ $resultat = $connexion->query("SELECT * FROM article ORDER BY id DESC LIMIT 1;")
 
 $listeArticles = $resultat->fetchAll();
 
-foreach($listeArticles as $article) {
+foreach ($listeArticles as $article) {
+    setlocale(LC_TIME, 'fr');
+    $date = strftime('%A %d %B %G à %Hh%M', strtotime($article['date']));
 ?>
     <article>
-    
-        <h2><?php echo $article["nom"];?></h2>
 
-        <img style="width:200px;" src="./assets/images/<?php echo $article["image"];?>" alt="image motoCross" title="Image de MotoCross">
+        <h2><?php echo $article["nom"]; ?></h2>
 
-        <p><?php echo $article["description"];?></p>
+        <img style="width:400px;" src="./assets/images/articles/<?php echo $article["image"]; ?>" alt="image motoCross" title="Image de MotoCross">
 
-        <legend><?php echo $article["prix"];?> €.</legend>
+        <p><?php echo $article["description"]; ?></p>
 
-        <p><?php echo $article["date"];?></p>
+        <legend><?php echo $article["prix"]; ?> €.</legend>
+
+        <p>Le <?php echo $date; ?>.</p>
 
     </article>
 <?php
