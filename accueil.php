@@ -1,4 +1,4 @@
-<h1>ACCUEIL</h1>
+<h1>ACCUEIL </h1>
 
 <?php
 
