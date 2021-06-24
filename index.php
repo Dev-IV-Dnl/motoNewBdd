@@ -30,6 +30,12 @@ session_start();
           <li class="nav-item">
             <a class="nav-link" href="./index.php?page=blog">Blog</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./index.php?page=goodies">Goodies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./index.php?page=equipement">Equipement</a>
+          </li>
           <?php
           if (!isset($_SESSION['pseudo']) && !isset($_SESSION['is_admin'])) {
           ?>
@@ -51,20 +57,18 @@ session_start();
             </li>
           <?php
           }
-          ?>
-          <li class="nav-item">
-            <a class="nav-link" href="./index.php?page=goodies">Goodies</a>
-          </li>
-          <?php
           if (isset($_SESSION['is_admin'])) {
           ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administration</a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="./index.php?page=ajout-article">Ajout d'articles</a>
+                <a class="dropdown-item" href="./index.php?page=ajout-equipement">Ajout d'équipements</a>
                 <a class="dropdown-item" href="./index.php?page=ajout-goodies">Ajout de Goodies</a>
+
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Modifier les articles</a>
+                <a class="dropdown-item" href="#">Modifier les équipements</a>
                 <a class="dropdown-item" href="#">Modifier les goodies</a>
               </div>
             </li>
@@ -72,8 +76,9 @@ session_start();
           }
           ?>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-sm-2" type="text" placeholder="Rechercher">
+        <form class="d-flex" method="GET" action="./index.php?page=recherche">
+          <input name="page" type="hidden" value="recherche">
+          <input name="maRecherche" class="form-control me-sm-2" type="text" placeholder="Votre recherche..." autofocus>
           <button class="btn btn-secondary my-2 my-sm-0" type="submit">🔍</button>
         </form>
       </div>
@@ -118,11 +123,15 @@ session_start();
     "connexion",
     "deconnexion",
     "goodies",
+    "equipement",
     "ajout-article",
+    "ajout-equipement",
     "ajout-goodies",
     "administration",
     "modifier-articles",
+    "modifier-equipements",
     "modifier-goodies",
+    "recherche",
     "404"
   ];
 

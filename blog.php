@@ -2,9 +2,9 @@
 
 <?php
 
-$resultat = $connexion->query("SELECT * FROM article ORDER BY id DESC;");
+/*$resultat*/ $listeArticles = $connexion->query("SELECT * FROM article ORDER BY id DESC;")->fetchAll();
 
-$listeArticles = $resultat->fetchAll();
+// $listeArticles = $resultat->fetchAll();
 
 foreach ($listeArticles as $article) {
     setlocale(LC_TIME, 'fr');
