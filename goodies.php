@@ -9,16 +9,20 @@ $listeGoodies = $resultat->fetchAll();
 foreach ($listeGoodies as $goodies) {
     setlocale(LC_TIME, 'fr');
     $date = strftime('%A %d %B %G à %Hh%M', strtotime($goodies['date']));
-?>
+    ?>
     <article>
-        <h2><?php echo $goodies["nom"]; ?></h2>
+      
+        <img class="imageProduit" src="./assets/images/goodies/<?php echo $goodies["image"]; ?>" alt="image motoCross" title="Image de MotoCross">
 
-        <img style="width:200px;" src="./assets/images/goodies/<?php echo $goodies["image"]; ?>" alt="image motoCross" title="Image de MotoCross">
+        <div class="produit">
+            <h2><?php echo $goodies["nom"]; ?></h2>
 
-        <p><?php echo $goodies["description"]; ?></p>
+            <div class="descriptionProduit">
+                <p><?php echo substr($goodies["description"], 0, 300); ?><br><a href="#">En lire plus</a></p>
+            </div>
 
-        <p>Le <?php echo $date; ?>.</p>
-
+            <p>Le <?php echo $date; ?>.</p>
+        </div>
     </article>
 <?php
 }

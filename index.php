@@ -8,11 +8,15 @@ session_start();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://bootswatch.com/5/sketchy/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://bootswatch.com/5/united/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/projet-site.css">
   <title>Projet Site</title>
 </head>
 
 <body>
+<section>
+<div class="container-nav-bar">
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Projet Site IV</a>
@@ -60,7 +64,7 @@ session_start();
           if (isset($_SESSION['is_admin'])) {
           ?>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Administration</a>
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin</a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="./index.php?page=ajout-article">Ajout d'articles</a>
                 <a class="dropdown-item" href="./index.php?page=ajout-equipement">Ajout d'équipements</a>
@@ -79,11 +83,12 @@ session_start();
         <form class="d-flex" method="GET" action="./index.php?page=recherche">
           <input name="page" type="hidden" value="recherche">
           <input name="maRecherche" class="form-control me-sm-2" type="text" placeholder="Votre recherche..." autofocus>
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">🔍</button>
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
         </form>
       </div>
     </div>
   </nav>
+  </div>
 
   <?php
 
@@ -152,6 +157,8 @@ session_start();
   </center>
   <script src="./assets/javascript/projetSite.js"></script>
   <script src="./assets/javascript/projetSite2.js"></script>
+
+</section>
 </body>
 
 </html>

@@ -11,17 +11,21 @@ foreach ($listeEquipements as $equipement) {
     $date = strftime('%A %d %B %G à %Hh%M', strtotime($equipement['date']));
 ?>
     <article>
-        <h2><?php echo $equipement["nom"]; ?></h2>
+      
+      <img class="imageProduit" src="./assets/images/equipement/<?php echo $equipement["image"]; ?>" alt="image motoCross" title="Image de MotoCross">
 
-        <img style="width:200px;" src="./assets/images/equipement/<?php echo $equipement["image"]; ?>" alt="image equipement" title="Image d'équipement'">
+      <div class="produit">
+          <h2><?php echo $equipement["nom"]; ?></h2>
 
-        <p><?php echo $equipement["description"]; ?></p>
+          <div class="descriptionProduit">
+              <p><?php echo substr($equipement["description"], 0, 120); ?>...<br><a href="#">En lire plus</a></p>
+          </div>
+          
+          <h4><?php echo $equipement["prix"]; ?> €.</h4>
 
-        <legend><?php echo $equipement["prix"]; ?> €.</legend>
-
-        <p>Le <?php echo $date; ?>.</p>
-
-    </article>
+          <p>Le <?php echo $date; ?>.</p>
+      </div>
+  </article>
 <?php
 }
 ?>

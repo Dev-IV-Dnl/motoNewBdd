@@ -11,16 +11,20 @@ foreach ($listeArticles as $article) {
     $date = strftime('%A %d %B %G à %Hh%M', strtotime($article['date']));
 ?>
     <article>
-        <h2><?php echo $article["nom"]; ?></h2>
+      
+        <img class="imageProduit" src="./assets/images/articles/<?php echo $article["image"]; ?>" alt="image motoCross" title="Image de MotoCross">
 
-        <img style="width:200px;" src="./assets/images/articles/<?php echo $article["image"]; ?>" alt="image motoCross" title="Image de MotoCross">
+        <div class="produit">
+            <h2><?php echo $article["nom"]; ?></h2>
 
-        <p><?php echo $article["description"]; ?></p>
+            <div class="descriptionProduit">
+                <p><?php echo substr($article["description"], 0, 120); ?> ...<br><a href="#">En lire plus</a></p>
+            </div>
+            
+            <h4><?php echo $article["prix"]; ?> €.</h4>
 
-        <legend><?php echo $article["prix"]; ?> €.</legend>
-
-        <p>Le <?php echo $date; ?>.</p>
-
+            <p>Le <?php echo $date; ?>.</p>
+        </div>
     </article>
 <?php
 }

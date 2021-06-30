@@ -3,8 +3,8 @@
 <?php
 if (isset($_SESSION['pseudo'])) {
 ?>
-    <a href="./index.php?page=deconnexion">
-        Déconnexion.
+    <a href="./index.php?page=equipement">
+        Aller sur la page d'équipements réservée aux utilisateurs.
     </a>
 <?php
 } else {

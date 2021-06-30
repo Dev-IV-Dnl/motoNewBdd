@@ -1,0 +1,168 @@
+:root {
+    --col1:#e95420;
+    --col2:#333;
+    --col3:#F1F1F1;
+    --col4:white;
+    --col5:rgb(179, 175, 175);
+}
+body {
+    background-color: var(--col2);
+}
+
+.container-nav-bar {
+    position: fixed;
+    width: 100vw;
+}
+
+section {
+    height: 100vh;
+    background-image: url(../images/wall-papers/moto-cross1.jpg);
+    background-size: cover;
+    /* background-repeat: no-repeat; utile avec le contain
+    background-position: center;  utilise avec le contain */
+    /* background-attachment: fixed; */
+    overflow: auto; /*PERMET DE NE PLUS AVOIR DE FIN DE BACKGROUND-IMAGE */
+    height: 100vh;
+}
+
+*{
+    color: var(--col3);
+    font-size: 1rem;
+}
+
+article {
+    z-index: 2;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    height: 210px;
+    background-color: var(--col1);
+    border: solid 3px var(--col1);
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px var(--col2);
+}
+
+
+.produit {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.produit>h2 {
+    margin: 2px;
+}
+
+.descriptionProduit {
+    display: flex;
+    justify-content: center;
+}
+.produit>.descriptionProduit>p>a {
+    text-decoration: none;
+    transition: linear 0.3s;
+    color: var(--col3);
+}
+.produit>.descriptionProduit>p>a:hover {
+    color: var(--col2);
+}
+
+.imageProduit {
+    width: 240px;
+    height: 200px;
+    background-color: var(--col4);
+    border: solid 2px var(--col2);
+    /* box-shadow: 2px 2px 6px var(--col2); */
+    border-radius: 7px;
+    object-fit: contain;
+}
+
+a {
+    color: var(--col2);
+}
+a:hover {
+    color: var(--col3);
+}
+
+@media screen and (max-width:740px) {
+    article {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+.my-sm-0 {
+    background-color: transparent;
+}
+
+h1 {
+    margin: 10px;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+    height: 100px;
+    border: solid 2px var(--col1);
+    border-radius: 10px;
+    color: var(--col3);
+    background-color: var(--col1);
+    transition: linear 0.3s;
+    user-select: none;
+}
+h1:hover {
+    color: var(--col1);
+    background-color: var(--col3);
+}
+
+h3 {
+    color:var(--col2);
+}
+h2 {
+    color:var(--col3);
+
+}
+
+label {
+    color: var(--col1);
+    margin-top: 12px;
+}
+
+input {
+    margin: 2px;
+    border: solid 2px var(--col1);
+    border-radius: 5px;
+    color: var(--col1);
+    transition: linear 0.3s;
+}
+input:hover {
+    background-color: var(--col1);
+    color: var(--col3);
+}
+::placeholder {
+    color: var(--col1);
+}
+
+.menuAdmin {
+    width: 260px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    border: solid 1px var(--col1);
+    border-radius: 10px;
+    background-color: var(--col1);
+}
+.menuAdmin>li>a {
+    margin: 10px;
+    color: var(--col3);
+    text-decoration: none;
+    transition: linear 0.3s;
+}
+.menuAdmin>li>a:hover {
+    color: var(--col2);
+}
