@@ -22,10 +22,9 @@ section {
     background-position: center;  utilise avec le contain */
     /* background-attachment: fixed; */
     overflow: auto; /*PERMET DE NE PLUS AVOIR DE FIN DE BACKGROUND-IMAGE */
-    height: 100vh;
 }
 
-*{
+* {
     color: var(--col3);
     font-size: 1rem;
 }
@@ -36,7 +35,7 @@ article {
     margin-top: 20px;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
+    width: 60%;
     height: 210px;
     background-color: var(--col1);
     border: solid 3px var(--col1);
@@ -78,6 +77,19 @@ article {
     object-fit: contain;
 }
 
+@media screen and (max-width:900px) {
+    article {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .imageProduit {
+        width: 180px;
+        height: 135px;
+    }
+}
+
 a {
     color: var(--col2);
 }
@@ -85,17 +97,6 @@ a:hover {
     color: var(--col3);
 }
 
-@media screen and (max-width:740px) {
-    article {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-    }
-}
-
-.my-sm-0 {
-    background-color: transparent;
-}
 
 h1 {
     margin: 10px;
