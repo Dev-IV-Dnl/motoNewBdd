@@ -1,27 +1,85 @@
 :root {
-    --col1:#e95420;
-    --col2:#333;
-    --col3:#F1F1F1;
-    --col4:white;
-    --col5:rgb(179, 175, 175);
+    --col1: #8d0000;
+    --col2: #333;
+    --col3: #F1F1F1;
+    --col4: white;
+    --col5: rgba(255, 255, 255, .55);
+    --col7: transparent;
 }
+
 body {
     background-color: var(--col2);
 }
 
 .container-nav-bar {
+    background-color: var(--col1);
+    z-index: 1;
     position: fixed;
     width: 100vw;
+}
+.navbar {
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 section {
     height: 100vh;
-    background-image: url(../images/wall-papers/moto-cross1.jpg);
+    background-image: url(../images/wall-papers/moto-cross3.jpg);
     background-size: cover;
     /* background-repeat: no-repeat; utile avec le contain
     background-position: center;  utilise avec le contain */
     /* background-attachment: fixed; */
-    overflow: auto; /*PERMET DE NE PLUS AVOIR DE FIN DE BACKGROUND-IMAGE */
+    overflow: auto;
+    /*PERMET DE NE PLUS AVOIR DE FIN DE BACKGROUND-IMAGE */
+}
+
+.navbar-brand {
+    background-image: url(../images/wall-papers/motocross-1-transparent.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: var(--col3);
+    overflow: auto;
+    height: 100%;
+    font-family: 'Black Ops One', cursive;
+    border-radius: 7px;
+    color: var(--col1) !important;
+    text-shadow: 2px 2px 2px var(--col3);
+}
+
+@media screen and (max-width:573px) {
+    .container-nav-bar {
+        position: relative;
+        bottom: 0;
+        z-index: 1;
+        position: fixed;
+        width: 100vw;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    article {
+        margin-top: 20px;
+        margin-bottom: 70px;
+    }
+}
+@media screen and (max-width:373px) {
+    h1 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width:574px) {
+    article {
+        margin-bottom: 20px;
+    }
+}
+
+.separator {
+    width: 100%;
+    height: 2px;
+    background-color: var(--col3);
+    opacity: 0.8;
 }
 
 * {
@@ -32,15 +90,16 @@ section {
 article {
     z-index: 2;
     display: flex;
-    margin-top: 20px;
+    margin-top: 60px;
     align-items: center;
     justify-content: space-between;
     width: 60%;
-    height: 210px;
+    height: auto;
     background-color: var(--col1);
     border: solid 3px var(--col1);
     border-radius: 10px;
-    box-shadow: 4px 4px 10px var(--col2);
+    box-shadow: 5px 5px 10px var(--col2);
+    opacity: 0.9;
 }
 
 
@@ -50,21 +109,29 @@ article {
     flex-direction: column;
     width: 100%;
 }
+
 .produit>h2 {
     margin: 2px;
+    font-family: 'Black Ops One', cursive;
 }
 
 .descriptionProduit {
+    width: 90%;
     display: flex;
     justify-content: center;
 }
-.produit>.descriptionProduit>p>a {
+.descriptionProduit:hover {
+    color: var(--col3);
+}
+
+a {
     text-decoration: none;
     transition: linear 0.3s;
     color: var(--col3);
 }
-.produit>.descriptionProduit>p>a:hover {
-    color: var(--col2);
+
+a:hover {
+    color: var(--col5);
 }
 
 .imageProduit {
@@ -77,7 +144,7 @@ article {
     object-fit: contain;
 }
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:767px) {
     article {
         display: flex;
         flex-direction: column;
@@ -89,66 +156,181 @@ article {
         height: 135px;
     }
 }
-
-a {
-    color: var(--col2);
+@media screen and (max-width:319px) {
+    .imageProduit {
+        width: 160px;
+        height: 120px;
+    }
 }
-a:hover {
+
+.enLirePlus {
     color: var(--col3);
 }
 
+.enLirePlus:hover {
+    color: var(--col5);
+}
+
+.lienProduit:hover {
+    color: var(--col3);
+}
 
 h1 {
-    margin: 10px;
     margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 260px;
-    height: 100px;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 45%;
+    height: auto;
     border: solid 2px var(--col1);
     border-radius: 10px;
-    color: var(--col3);
-    background-color: var(--col1);
-    transition: linear 0.3s;
-    user-select: none;
-}
-h1:hover {
     color: var(--col1);
     background-color: var(--col3);
+    transition: linear 0.3s;
+    user-select: none;
+    opacity: 0.8;
+    box-shadow: 5px 5px 10px var(--col2);
+    font-family: 'Black Ops One', cursive;
+    text-shadow: 2px 2px 5px var(--col2);
+}
+
+h1:hover {
+    color: var(--col3);
+    background-color: var(--col1);
+    box-shadow: 5px 5px 10px var(--col2);
 }
 
 h3 {
-    color:var(--col2);
+    width: auto;
+    height: auto;
+    background-color: var(--col3);
+    color: var(--col1);
+    text-shadow: 2px 2px 5px var(--col2);
+    opacity: 0.8;
 }
+h3>a {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--col1);
+    transition: linear 0.2s;
+}
+h3>a:hover {
+    font-size: 1.7rem;
+    color: var(--col2);
+}
+h3>span {
+    font-family: 'Black Ops One', cursive;
+    color: var(--col1);
+    font-size: 2rem;
+
+}
+
+.messageConnexion {
+    width: 650px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px var(--col2);
+    border: solid 2px var(--col1);
+    background-color: var(--col3);
+    opacity: 0.8;
+}
+
+.messageConnexion>h3 {
+    border-radius: 15px;
+    color: var(--col1);
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px 10px var(--col2);
+}
+
+.messageConnexion>h3>a {
+    color: var(--col2);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: linear 0.3s;
+}
+
+.messageConnexion>h3>a:hover {
+    color: var(--col1);
+}
+
+.lienQuandUtilisateurConnecte {
+    width: 650px;
+    height: 40px;
+    border: solid 2px var(--col1);
+    background-color: transparent;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px var(--col2);
+    background-color: var(--col3);
+    opacity: 0.8;
+}
+
+.lienQuandUtilisateurConnecte>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: var(--col1);
+    text-decoration: none;
+    text-shadow: 1px 1px 10px var(--col2);
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.lienQuandUtilisateurConnecte>a:hover {
+    background-color: var(--col1);
+    color: var(--col3);
+}
+
 h2 {
-    color:var(--col3);
+    color: var(--col3);
 
 }
 
 label {
-    color: var(--col1);
+    width: 250px;
+    height: auto;
+    border: solid 1px;
+    background-color: var(--col1);
+    color: var(--col3);
     margin-top: 12px;
+    border-radius: 10px;
+    opacity: 0.8;
 }
 
 input {
     margin: 2px;
-    border: solid 2px var(--col1);
+    border: solid 2px var(--col3);
     border-radius: 5px;
     color: var(--col1);
     transition: linear 0.3s;
 }
+
 input:hover {
     background-color: var(--col1);
     color: var(--col3);
 }
+
 ::placeholder {
-    color: var(--col1);
+    color: var(--col5);
+    text-shadow: 2px 2px var(--col2);
+}
+
+::placeholder:hover {
+    color: var(--col2);
 }
 
 .menuAdmin {
+    margin-top: 50px;
     width: 260px;
-    height: 220px;
+    height: auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -157,13 +339,205 @@ input:hover {
     border: solid 1px var(--col1);
     border-radius: 10px;
     background-color: var(--col1);
+    box-shadow: 5px 5px 10px var(--col2);
+    opacity: 0.9;
+    border: solid 2px var(--col7);
+    transition: linear 0.3s;
 }
+.menuAdmin:hover {
+    border-color: var(--col3);
+}
+
 .menuAdmin>li>a {
     margin: 10px;
     color: var(--col3);
     text-decoration: none;
     transition: linear 0.3s;
 }
+
 .menuAdmin>li>a:hover {
-    color: var(--col2);
+    color: var(--col5);
+}
+
+.buttonPanier {
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    background-color: var(--col2);
+    border-radius: 5px;
+    right: 0;
+    border: solid 1px;
+    /* box-shadow: 2px 2px 5px 2px var(--col1); */
+    transition: linear 0.2s;
+}
+.buttonPanier:hover {
+    box-shadow: 1px 1px 5px var(--col2);
+    background-color: var(--col1);
+    transform: scale(1.4);
+}
+
+.lienPanier {
+    margin-right: 20px;
+    padding: 5px;
+}
+
+.icone {
+    transition: linear 0.3s;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--col5);
+}
+
+.icone:hover {
+    color: var(--col3);
+}
+
+.inputRecherche {
+    width: 236px;
+    height: 38px;
+    border: 2px var(--col1);
+    border-radius: 10px;
+    transition: linear 0.3s;
+    background-color: var(--col1);
+    border: solid 1px var(--col3);
+    color: var(--col3);
+}
+
+.inputRecherche:hover {
+    background-color: var(--col1);
+    color: var(--col1);
+    border: solid 2px var(--col3);
+    text-shadow: none;
+}
+
+.inputRecherche:focus {
+    color: var(--col3);
+    background-color: var(--col2);
+    border: solid 2px var(--col3);
+}
+
+
+#iconeRecherche {
+    width: 40px;
+    height: 100%;
+    transition: linear 0.3s;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--col5);
+}
+
+#iconeRecherche:hover {
+    color: var(--col1);
+}
+
+.recherche {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--col1);
+    height: 40px;
+    width: 40px;
+    transition: linear 0.3s;
+    border: transparent;
+}
+
+.recherche:hover {
+    background-color: var(--col3);
+}
+
+.formAjoutProduit {
+    width: 50%;
+    height: auto;
+}
+
+.inputNom, .inputDescription, .inputImage, .inputPrix, .inputCategorie {
+    width: 45%;
+    height: auto;
+}
+.inputImage {
+    color: var(--col3);
+    font-size: 1rem;
+    text-shadow: 3px 3px 5px var(--col2);
+}
+.inputDescription {
+    margin: 2px;
+    border: solid 2px var(--col1);
+    border-radius: 5px;
+    color: var(--col1);
+    transition: linear 0.3s;
+}
+.inputDescription:hover {
+    background-color: var(--col1);
+    color: var(--col3);
+}
+
+.carousel {
+    width: 60%;
+    height: auto;
+    border-radius: 30px;
+    opacity: 0.9;
+}
+@media screen and (max-width:769px) {
+    .carousel {
+        width: 80%;
+        max-height: 300px;
+    }
+}
+
+@media screen and (min-width:1025px) {
+    .carousel {
+        width: 60%;
+        height: auto;
+    }
+}
+
+.carousel-inner {
+    margin: 0 auto;
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px var(--col2);
+    border: solid 4px var(--col1);
+}
+
+.carousel-item img {
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+.carousel-caption h5 {
+    color: var(--col3);
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 5px 5px 10px var(--col1);
+    font-family: 'Black Ops One', cursive;
+}
+.carousel-caption p {
+    color: var(--col3);
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px var(--col1);
+    font-family: 'Black Ops One', cursive;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-indicators .active {
+    width: 50px;
+    height: 10px;
+    background-color: var(--col1);
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: var(--col2);
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px var(--col3);
+}
+
+.modifPanier {
+    display: flex;
 }
