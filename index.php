@@ -154,7 +154,8 @@ session_start();
       "recherche",
       "panier",
       "produit",
-      "404"
+      "404",
+      "erreurServeur"
     ];
 
     if (isset($_GET["page"])) {
