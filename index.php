@@ -155,7 +155,8 @@ session_start();
       "panier",
       "produit",
       "404",
-      "erreurServeur"
+      "erreurServeur",
+      "csrf"
     ];
 
     if (isset($_GET["page"])) {

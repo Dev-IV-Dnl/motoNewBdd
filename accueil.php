@@ -13,11 +13,12 @@ if (!isset($_SESSION['pseudo'])) {
 <?php
 
 $resultat = $connexion->query("SELECT * FROM categories
-INNER JOIN produits
-USING(id_categorie)
-WHERE nom_categorie='moto'
-ORDER BY id_produit
-DESC LIMIT 1;");
+                                INNER JOIN produits
+                                USING(id_categorie)
+                                WHERE nom_categorie='moto'
+                                ORDER BY id_produit
+                                DESC LIMIT 1;"
+                            );
 
 $listeProduits = $resultat->fetchAll();
 
@@ -77,10 +78,11 @@ foreach ($listeProduits as $produits) {
 }
 
 $resultat = $connexion->query("SELECT * FROM categories
-INNER JOIN produits USING(id_categorie)
-WHERE nom_categorie='equipement'
-ORDER BY id_produit
-DESC LIMIT 1;");
+                                INNER JOIN produits USING(id_categorie)
+                                WHERE nom_categorie='equipement'
+                                ORDER BY id_produit
+                                DESC LIMIT 1;"
+                            );
 
 $listeProduits = $resultat->fetchAll();
 
@@ -142,10 +144,11 @@ foreach ($listeProduits as $produits) {
 }
 
 $resultat = $connexion->query("SELECT * FROM categories
-INNER JOIN produits USING(id_categorie)
-WHERE nom_categorie='goodie'
-ORDER BY id_produit
-DESC LIMIT 1;");
+                                INNER JOIN produits USING(id_categorie)
+                                WHERE nom_categorie='goodie'
+                                ORDER BY id_produit
+                                DESC LIMIT 1;"
+                            );
 
 $listeProduits = $resultat->fetchAll();
 
@@ -203,4 +206,9 @@ foreach ($listeProduits as $produits) {
     </a>
 <?php
 }
+
+
+echo strlen("Créée en 1901 et aujourd'hui dirigée par Éric ANDRÉ et Francis MOULET, l'agence est fortement impliquée dans le logement, le tertiaire et la santé.");
+echo '<br>';
+echo strlen("Créée en 1901 et aujourd'hui dirigée par Éric ANDRÉ et Francis MOULET, l'agence est fortement impliquée dans le logement, le tertiaire et la santé. Cette dernière est également composée d'une équipe de 14 membres comprenant architectes, économistes, infographistes et maîtres de chantier");
 ?>

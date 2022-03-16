@@ -6,7 +6,7 @@ if (!isset($_SESSION["is_admin"])) {
     header('Refresh:3; url=./index.php?page=blog');
     echo "<h3>Vous n'avez pas accès à cette page car vous nêtes pas administrateur.<br>Redirection vers la page de Blog...";
 } else {
-    echo '<br><h3>Bienvenue ' . $_SESSION["pseudo"] . ' !</h3>';
+    echo '<br><h3>Bienvenue sur la modification de produit ' . $_SESSION["pseudo"] . ' !</h3>';
 
     $produit = $connexion->query("SELECT* FROM produits WHERE id_produit = '" . $_GET["produit"] . "';")->fetch();
 ?>
@@ -49,9 +49,9 @@ if (!isset($_SESSION["is_admin"])) {
                 $categorie = 3;
             }
 
-            $ajout = "UPDATE produits SET nom_produit=:nom, image_produit=:image, description_produit=:description, prix_produit=:prix, id_categorie=:categorie WHERE id_produit='" . $_GET["produit"] . "'";
+            $modif = "UPDATE produits SET nom_produit=:nom, image_produit=:image, description_produit=:description, prix_produit=:prix, id_categorie=:categorie WHERE id_produit='" . $_GET["produit"] . "'";
 
-            $requete = $connexion->prepare($ajout);
+            $requete = $connexion->prepare($modif);
             $requete->execute([
                 ':nom' => $nom,
                 ':image' => $image,
@@ -60,11 +60,11 @@ if (!isset($_SESSION["is_admin"])) {
                 ':categorie' => $categorie
             ]);
             echo "<h3>Vous venez de modifier votre <span>" . $_POST['categorie'] . "</span> avec succès !</h3>";
-            echo '<script language="Javascript">
-                <!--
-                     setTimeout(function(){ document.location.replace("./index.php?page=modifier-produit&produit=' . $_GET["produit"] . '") }, 2000);
-                // -->
-                </script>';
+            // echo '<script language="Javascript">
+            //     <!--
+            //          setTimeout(function(){ document.location.replace("./index.php?page=produit&produit=' . $_GET["produit"] . '") }, 2000);
+            //     // -->
+            //     </script>';
         }
     }
     ?>

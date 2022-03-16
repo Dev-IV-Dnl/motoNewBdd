@@ -7,18 +7,13 @@ if (!isset($_SESSION['pseudo'])) {
         $mdp = $_POST["mot_de_passe"];
 
         $sql = "SELECT * FROM utilisateurs WHERE pseudo = :pseudo";
-        // (echo $sql)
-
-        // $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        //pas besoin car dans l'index fonction Bdd !
-
         $requete = $connexion->prepare($sql);
-        $requete->execute([":pseudo" => $pseudo]);
+        $requete->execute([":pseudo" => addslashes($pseudo)]);
 
         $utilisateur = $requete->fetch();
 
         if (!$utilisateur && !password_verify($mdp, $utilisateur["mot_de_passe"])) {
-            echo 'Mauvais pseudo et mdp';
+            echo '<h3>Mauvais pseudo et mdp</h3>';
         } else {
             if ($utilisateur["is_admin"]) {
                 $_SESSION["is_admin"] = $utilisateur["is_admin"];
