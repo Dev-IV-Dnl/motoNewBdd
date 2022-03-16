@@ -137,7 +137,7 @@ session_start();
     }
     $connexion = connectBdd("moto_mvc");
 
-    //Coucou je te peush de Wampp
+    //Coucou je te push de Wampp
 
     $page = "accueil";
 
