@@ -135,7 +135,9 @@ session_start();
       $maConnexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       return $maConnexion;
     }
-    $connexion = connectBdd("motonewbdd");
+    $connexion = connectBdd("moto_mvc");
+
+    //Coucou je te peush de Wampp
 
     $page = "accueil";
 
